@@ -29,9 +29,18 @@ app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
+// This enables cross Origin Requests
+// Note: Don't use * for production unless really want to allow requests from anywhere.
+app.use((request, response, next) => {
+    response.header("Access-Control-Allow-Origin", "*");
+    response.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+    next();
+});
+
 // app.use('/api', index);
 app.use('/api/users', users);
 app.use('/api/systems', systems);
+app.use('/api/user_system', user_system);
 // app.use('/api/tasks', tasks);
 // app.use('/api/task_type', task_type);
 // app.use('/api/action_type', action_type);

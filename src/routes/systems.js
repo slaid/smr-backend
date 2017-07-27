@@ -11,7 +11,7 @@ router.get('/', (request, response, next) => {
                 .json({
                     status: 'success',
                     data: data,
-                    message: 'Retrieved ALL users'
+                    message: 'Retrieved ALL systems'
                 });
         })
         .catch((err) => {
@@ -67,6 +67,42 @@ router.put('/:id', (request, response, next) => {
             return next(err);
         });
 });
+
+// Deactivate System
+router.put('/:id/deactivate', (request, response, next) => {
+    let systemID = parseInt(request.params.id);
+    db.database.none('UPDATE systems SET active=false WHERE system_id=$1',
+        systemID)
+        .then(() => {
+            response.status(200)
+                .json({
+                    status: 'success',
+                    message: `User ${systemID} has been deactivated`
+                });
+        })
+        .catch((err) => {
+            return next(err);
+        });
+});
+
+
+// Activate System
+router.put('/:id/activate', (request, response, next) => {
+    let systemID = parseInt(request.params.id);
+    db.database.none('UPDATE systems SET active=true WHERE system_id=$1',
+        systemID)
+        .then(() => {
+            response.status(200)
+                .json({
+                    status: 'success',
+                    message: `User ${systemID} has been activated`
+                });
+        })
+        .catch((err) => {
+            return next(err);
+        });
+});
+
 
 
 // Delete System

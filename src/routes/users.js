@@ -76,7 +76,7 @@ router.delete('/:id', (request, response, next) => {
         .then((result) => {
             response.status(200)
                 .json({
-                    status: 'Success',
+                    status: 'success',
                     message: `Removed ${result.rowCount} user`
                 });
         })
@@ -84,5 +84,43 @@ router.delete('/:id', (request, response, next) => {
             return next(err);
         });
 });
+
+
+// Deactivate User
+router.put('/:id/deactivate', (request, response, next) => {
+    let userID = parseInt(request.params.id);
+    db.database.none('UPDATE users SET active=false WHERE user_id=$1',
+        userID)
+        .then(() => {
+            response.status(200)
+                .json({
+                    status: 'success',
+                    message: `User ${userID} has been deactivated`
+                });
+        })
+        .catch((err) => {
+            return next(err);
+        });
+
+});
+
+// Activate User
+router.put('/:id/activate', (request, response, next) => {
+    let userID = parseInt(request.params.id);
+    db.database.none('UPDATE users SET active=true WHERE user_id=$1',
+        request.params.id)
+        .then(() => {
+            response.status(200)
+                .json({
+                    status: 'success',
+                    message: `User ${userID} has been activated`
+                });
+        })
+        .catch((err) => {
+            return next(err);
+        });
+
+});
+
 
 module.exports = router;

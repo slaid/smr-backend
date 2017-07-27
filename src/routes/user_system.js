@@ -20,8 +20,9 @@ router.get('/', (request, response, next) => {
 });
 
 
-// Get a single User_System
-router.ger('/:id', (request, response, next) => {
+// Get a Single User_System
+
+router.get('/:id', (request, response, next) => {
     let userSystemId = parseInt(request.params.id);
     db.database.one('SELECT * FROM users_systems WHERE users_systems_id = $1', userSystemId)
         .then((data) => {
@@ -38,6 +39,18 @@ router.ger('/:id', (request, response, next) => {
 });
 
 
+
+
+
+
+
+
+
+
+
+
+
+// Must check this and validate it..
 // Delete User_System
 router.delete('/:id', (request, response, next) => {
     let userSystemId = parseInt(request.params.id);
@@ -53,3 +66,5 @@ router.delete('/:id', (request, response, next) => {
             return next(err);
         });
 });
+
+module.exports = router;
