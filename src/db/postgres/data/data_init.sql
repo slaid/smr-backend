@@ -59,6 +59,8 @@ VALUES ('Rui', 'Miranda', 'rui.miranda@cgi.com', 'rui.miranda', 'GFR9uT4N4TOl3vn
 INSERT INTO USERS (FIRST_NAME, LAST_NAME, EMAIL, USERNAME, SALT, PASSHASH)
 VALUES ('Dário', 'Ferreira', 'dario.ferreira@cgi.com', 'dario.ferreira', 'GFG9uT4N4Tzl2vnK', '2c2bf00079a6d49a8f7fb17cefb52fdb41a4b043');
 INSERT INTO USERS (FIRST_NAME, LAST_NAME, EMAIL, USERNAME, SALT, PASSHASH)
+VALUES ('Ricardo', 'Campanha', 'ricardo.campanha@cgi.com', 'ricardo.campanha', 'GFG9uT7N4Tzl2vnK', '2c2bf00079a6d49a8f7fb17cefb52fdb41a4b043');
+INSERT INTO USERS (FIRST_NAME, LAST_NAME, EMAIL, USERNAME, SALT, PASSHASH)
 VALUES ('Oskar', 'Malmstrom', 'oskar.malmstrom@cgi.com', 'oskar.malmstrom', 'GFR9uF4L4Tzl3vnK', '2c2bf00079a6d49a8f7fb17cefb52fdb41a4b043');
 INSERT INTO USERS (FIRST_NAME, LAST_NAME, EMAIL, USERNAME, SALT, PASSHASH)
 VALUES ('Miguel', 'Cardador', 'miguel.cardador@cgi.com', 'miguel.cardador', 'GFR7uT4J4Tzl3vnK', '2c2bf00079a6d49a8f7fb17cefb52fdb41a4b043');
@@ -133,13 +135,15 @@ VALUES (11, 6, true, true);
 INSERT INTO USERS_SYSTEMS (USER_ID, SYSTEM_ID, DEFAULT_SYSTEM, ACTIVE)
 VALUES (12, 6, true, true);
 INSERT INTO USERS_SYSTEMS (USER_ID, SYSTEM_ID, DEFAULT_SYSTEM, ACTIVE)
-VALUES (13, 3, true, true);
+VALUES (13, 7, true, true);
 INSERT INTO USERS_SYSTEMS (USER_ID, SYSTEM_ID, DEFAULT_SYSTEM, ACTIVE)
-VALUES (14, 1, true, true);
+VALUES (14, 3, true, true);
 INSERT INTO USERS_SYSTEMS (USER_ID, SYSTEM_ID, DEFAULT_SYSTEM, ACTIVE)
-VALUES (15, 7, true, true);
+VALUES (15, 1, true, true);
 INSERT INTO USERS_SYSTEMS (USER_ID, SYSTEM_ID, DEFAULT_SYSTEM, ACTIVE)
-VALUES (16, 4, true, true);
+VALUES (16, 7, true, true);
+INSERT INTO USERS_SYSTEMS (USER_ID, SYSTEM_ID, DEFAULT_SYSTEM, ACTIVE)
+VALUES (17, 4, true, true);
 
 
 
